@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дневник на расположение</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <header class="top">
+    <p class="eyebrow">Личен дневник</p>
+    <h1>Како се чувствуваш денес?</h1>
+    <p class="subtitle">Одбери расположение, запиши неколку зборови, и следи ја својата градина на расположенија со денови.</p>
+  </header>
+
+  <main class="card">
+
+    <section class="mood-picker" aria-label="Избор на расположение">
+      <button class="mood-btn" data-mood="odlicno" data-color="#4F7A6B" style="--mood-color:#4F7A6B">
+        <span class="mood-icon">☀</span>
+        <span class="mood-label">Одлично</span>
+      </button>
+      <button class="mood-btn" data-mood="dobro" data-color="#6F8F5C" style="--mood-color:#6F8F5C">
+        <span class="mood-icon">🌤</span>
+        <span class="mood-label">Добро</span>
+      </button>
+      <button class="mood-btn" data-mood="neutralno" data-color="#C9A24C" style="--mood-color:#C9A24C">
+        <span class="mood-icon">☁</span>
+        <span class="mood-label">Во ред</span>
+      </button>
+      <button class="mood-btn" data-mood="losho" data-color="#B0704F" style="--mood-color:#B0704F">
+        <span class="mood-icon">🌧</span>
+        <span class="mood-label">Лошо</span>
+      </button>
+      <button class="mood-btn" data-mood="uzhasno" data-color="#8C5B6B" style="--mood-color:#8C5B6B">
+        <span class="mood-icon">⛈</span>
+        <span class="mood-label">Ужасно</span>
+      </button>
+    </section>
+
+    <section class="note-section">
+      <label for="note">Кратка белешка</label>
+      <textarea id="note" rows="3" placeholder="Што се случи денес, што те натера да се чувствуваш вака..."></textarea>
+      <button id="saveBtn" class="save-btn" disabled>Зачувај запис</button>
+    </section>
+
+    <section class="quote-box" id="quoteBox" hidden>
+      <p id="quoteText"></p>
+    </section>
+
+  </main>
+
+  <section class="garden-section">
+    <div class="garden-header">
+      <h2>Твојата градина на расположенија</h2>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-value" id="streakValue">0</span>
+          <span class="stat-label">последователни денови</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="totalValue">0</span>
+          <span class="stat-label">вкупно записи</span>
+        </div>
+      </div>
+    </div>
+    <div class="garden-row" id="gardenRow"></div>
+  </section>
+
+  <section class="history-section">
+    <h2>Историја</h2>
+    <ul class="history-list" id="historyList"></ul>
+    <p class="empty-state" id="emptyState">Сè уште немаш записи. Одбери расположение погоре за да започнеш.</p>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
